@@ -5,7 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class LoginPassword {
 
-    public static String checklogin( String login) throws WrongLoginException {
+    @Contract("_ -> param1")
+    public static @NotNull String checklogin(@NotNull String login) throws WrongLoginException {
 
         if (login.length() > 5) throw new WrongLoginException("Длина логина превышена ", login);
         return login;
